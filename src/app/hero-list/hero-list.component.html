@@ -3,9 +3,16 @@
 <button (click)="addHero(newHero.value)">Add</button>
 <br>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" [class.selected]="hero === selectedHero">
+  <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero?.id}}</span>
     {{ hero?.name }}
   </li>
 </ul>
 <p *ngIf="heroes?.length > 3">There are so many heroes!</p>
+
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero.
+  </h2>
+  <button (click)="gotoDetail()">View detail</button>
+</div>
