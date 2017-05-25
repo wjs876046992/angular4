@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'keyup',
+  selector: 'app-key-up',
   templateUrl: './keyup.component.html'
 })
 

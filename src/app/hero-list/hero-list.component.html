@@ -1,0 +1,12 @@
+<h3>List of heroes</h3>
+<input #newHero (keyup.enter)="addHero(newHero.value)">
+<button (click)="addHero(newHero.value)">Add</button>
+<br>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero?.id}}</span>
+    {{ hero?.name }}
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<p *ngIf="heroes?.length > 3">There are so many heroes!</p>

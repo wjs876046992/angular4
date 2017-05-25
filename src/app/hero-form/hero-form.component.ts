@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Hero } from '../hero/hero';
 
 @Component({
-  selector: 'hero-form',
+  selector: 'app-hero-form',
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.css']
 })
