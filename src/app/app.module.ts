@@ -11,6 +11,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroService } from './hero/hero.service';
 import { KeyupComponent } from './event/keyup/keyup.component';
 import { LoggerService } from './log/logger.service';
@@ -27,14 +28,15 @@ import { AppRoutingModule } from './app-routing.module';
     HeroDetailComponent,
     HeroFormComponent,
     HeroListComponent,
+    HeroSearchComponent,
     KeyupComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
-
   ],
   providers: [LoggerService, HeroService],
   bootstrap: [AppComponent]
