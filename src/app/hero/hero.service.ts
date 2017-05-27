@@ -6,16 +6,18 @@ import 'rxjs/add/operator/toPromise';
 import { Hero } from './hero';
 import { HEROES } from './mock-hero';
 import { LoggerService } from '../log/logger.service';
+import { appConfig } from '../app-config';
 
 @Injectable()
 export class HeroService {
 
   heroes: Hero[];
-  private heroUrl = 'api/heroes';
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private heroUrl = appConfig.baseUrl + '/heroes';
+  private headers = new Headers();
 
   constructor(private logger: LoggerService, private http: Http) {
     this.heroes = HEROES;
+    this.headers.append('Content-Type', 'application/json');
   }
 
   getHeroes = (): Promise<Hero[]> => {
@@ -24,7 +26,6 @@ export class HeroService {
   }
 
   getHero = (id: number): Promise<Hero> => {
-    // const url = `${this.heroUrl}/${id}`;
     const url = `${this.heroUrl}/${id}`;
     return this.http.get(url).toPromise().then(response => response.json().data as Hero).catch(this.handleError);
   }

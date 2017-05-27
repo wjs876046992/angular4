@@ -21,3 +21,13 @@ body, input[text], button {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.clearfix {
+  clear: both;
+
+  &:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+}
