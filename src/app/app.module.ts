@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ClickMeComponent } from './event/click-me/click-me.component';
@@ -15,6 +16,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroService } from './hero/hero.service';
 import { KeyupComponent } from './event/keyup/keyup.component';
 import { LoggerService } from './log/logger.service';
+import { HeroListBasicComponent } from './hero-list-animations/hero-list-basic/hero-list-basic.component';
+import { HeroTeamBuilderComponent } from './hero-list-animations/hero-team-builder/hero-team-builder.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -30,12 +33,14 @@ import { AppRoutingModule } from './app-routing.module';
     HeroListComponent,
     HeroSearchComponent,
     KeyupComponent,
+    HeroListBasicComponent,
+    HeroTeamBuilderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [LoggerService, HeroService],
