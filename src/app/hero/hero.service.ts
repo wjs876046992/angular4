@@ -22,7 +22,9 @@ export class HeroService {
 
   getHeroes = (): Promise<Hero[]> => {
     this.logger.info('Getting heroes...');
-    return this.http.get(this.heroUrl).toPromise().then(response => response.json().data as Hero[]).catch(this.handleError);
+    return this.http.get(this.heroUrl).toPromise().then(response => {
+      return response.json().data as Hero[];
+    }).catch(this.handleError);
   }
 
   getHero = (id: number): Promise<Hero> => {
@@ -36,7 +38,10 @@ export class HeroService {
   }
 
   createHero = (hero: Hero): Promise<Hero> => {
-    return this.http.post(this.heroUrl, JSON.stringify(hero), { headers: this.headers }).toPromise().then((response) => response.json().data as Hero).catch(this.handleError);
+    return this.http
+      .post(this.heroUrl, JSON.stringify(hero), { headers: this.headers })
+      .toPromise()
+      .then((response) => response.json().data as Hero).catch(this.handleError);
   }
 
   handleError = (error: any) => {

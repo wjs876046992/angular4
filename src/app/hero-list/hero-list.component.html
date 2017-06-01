@@ -1,6 +1,4 @@
 <h3>List of heroes</h3>
-<input #newHero (keyup.enter)="addHero(newHero.value)">
-<button (click)="addHero(newHero.value)">Add</button>
 <br>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="hero === selectedHero">
@@ -16,3 +14,4 @@
   </h2>
   <button (click)="gotoDetail()">View detail</button>
 </div>
+<button class="btn btn-primary" (click)="addHero()">Create Hero</button>

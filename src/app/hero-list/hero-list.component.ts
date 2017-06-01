@@ -23,12 +23,12 @@ export class HeroListComponent implements OnInit {
     this.heroService.getHeroes().then((heroes: Hero[]) => { this.heroes = heroes; });
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.getHeroes();
   }
 
-  addHero = (name) => {
-    this.heroes.push(new Hero(99, '', ''));
+  addHero = () => {
+    this.router.navigate(['/detail', '']);
   }
 
   selectHero = (hero) => {
