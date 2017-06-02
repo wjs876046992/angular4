@@ -1,5 +1,6 @@
 <h3>List of heroes</h3>
 <br>
+<button class="btn btn-primary" (click)="addHero()">Create Hero</button>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero?.id}}</span>
@@ -12,6 +13,5 @@
   <h2>
     {{selectedHero.name | uppercase}} is my hero.
   </h2>
-  <button (click)="gotoDetail()">View detail</button>
+  <button class="btn btn-default" (click)="gotoDetail()">View detail</button>
 </div>
-<button class="btn btn-primary" (click)="addHero()">Create Hero</button>
