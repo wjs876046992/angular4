@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { NgbAlertModule, NgbButtonsModule, NgbCollapseModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbAlertModule,
+  NgbButtonsModule,
+  NgbCollapseModule,
+  NgbDatepickerModule,
+  NgbDropdownModule
+} from '@ng-bootstrap/ng-bootstrap';
 
 import { MyModalComponent, MyModalContentComponent } from './modal.component';
 import { MyAlertComponent } from './alert.component';
@@ -14,7 +20,7 @@ import {
   DatepickerPopupComponent,
   DatepickerI18nComponent
 } from './datetimepicker.component';
-
+import { DropdownComponent } from './dropdown.component';
 
 @NgModule({
   imports: [
@@ -24,7 +30,8 @@ import {
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbDatepickerModule
+    NgbDatepickerModule,
+    NgbDropdownModule
   ],
   declarations: [
     MyModalComponent,
@@ -36,7 +43,8 @@ import {
     MyDatepickerComponent,
     DatepickerBasicComponent,
     DatepickerPopupComponent,
-    DatepickerI18nComponent
+    DatepickerI18nComponent,
+    DropdownComponent
   ],
   exports: [
     MyModalComponent,
@@ -45,7 +53,8 @@ import {
     MyButtonsComponent,
     MyCheckboxComponent,
     MyCollapseComponent,
-    MyDatepickerComponent
+    MyDatepickerComponent,
+    DropdownComponent
   ],
   providers: [],
   entryComponents: [ MyModalContentComponent ] // 当使用组件作为content时，需要设置此属性
